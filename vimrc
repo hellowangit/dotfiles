@@ -7,8 +7,8 @@ call pathogen#helptags()
 
 set nocompatible
 let mapleader=','
-set guifont=Monaco:h12 "YaHei_Consolas_Hybrid:h11:cGB2312
-colorscheme seoul256
+set guifont=Monaco:h13 
+colorscheme blackboard
 set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
@@ -42,9 +42,6 @@ set hidden
 " 设置tab键的宽度
 set tabstop=4
 
-" 设置自动缩进
-set autoindent
-
 "自动缩进宽度 
 set shiftwidth=4
 
@@ -67,8 +64,11 @@ set listchars=trail:.,tab:>-,eol:$
 set nolist
 :noremap ,i :set list!<CR>
 
-" 自定义快捷键
 inoremap jj <ESC>
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
 
 filetype on
 filetype plugin on
@@ -136,10 +136,6 @@ let g:vimwiki_list = [{
 let g:acp_enableAtStartup = 0
 let g:acp_behaviorKeywordLength = 2
 
-" AutoClose
-autocmd FileType javascript let b:AutoCloseProtectedRegions = ["Dialog", "ThoughBubble"]
-autocmd FileType python let b:AutoCloseProtectedRegions = ["Dialog", "ThoughBubble"]
-
 " NERD_Commenter
 let NERDSpaceDelims = 1
 
@@ -160,11 +156,15 @@ map <F11> :!node %<CR>
 " 添加文件类型 jsfl
 autocmd BufRead,BufNewFile *.jsfl set filetype=javascript 
 
-" ctags for js
-" let Tlist_JS_Settings = 'javascript;s:string;a:array;o:object;f:function'
-" " let Tlist_Ctags_Cmd = 'C:\Program Files (x86)\Vim\tools\ctags.exe'
-
 nmap tl :TagbarToggle<CR>
 
 " 使用~/.vim/syntas/php.vim,关闭分号错误显示
 let php_show_semicolon_error = 0
+
+let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
+
+
+" 自动打开目录栏
+" TODO 自动定位，退出时自动关闭
+autocmd BufWinEnter ToDOList.wiki :Voom<CR>
+
