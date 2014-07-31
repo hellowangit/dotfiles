@@ -8,7 +8,13 @@ call pathogen#helptags()
 set nocompatible
 let mapleader=','
 set guifont=Monaco:h13 
-colorscheme blackboard
+
+if has("gui_running")
+    colorscheme blackboard
+else 
+    colorscheme jellybeans
+endif
+
 set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
