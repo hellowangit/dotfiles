@@ -68,7 +68,7 @@ set foldlevel=99
 " 不可见字符 尾部空格用点表示，其余空格不显示
 set listchars=trail:.,tab:>-,eol:$
 set nolist
-:noremap ,i :set list!<CR>
+nnoremap ,i :set list!<CR>
 
 inoremap jj <ESC>
 nnoremap <C-j> <C-w>j
@@ -94,15 +94,16 @@ set completeopt=longest,menuone
 set tags=tags
 
 " NERDTree
-:noremap tr :NERDTreeToggle<CR>
+nnoremap tr :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1
 let NERDTreeMouseMode=1
 let NERDTreeQuitOnOpen=0
 
-" TagList
-" map tl :Tlist<CR>
-" let Tlist_Show_One_File = 1
-" let Tlist_Use_Right_Window = 1
+nnoremap tl :TlistToggle<CR>
+let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Show_One_File = 1
+let g:Tlist_WinWidth = 50
 
 " VimWiki
 let g:vimwiki_menu = ''
@@ -162,15 +163,12 @@ map <F11> :!node %<CR>
 " 添加文件类型 jsfl
 autocmd BufRead,BufNewFile *.jsfl set filetype=javascript 
 
-nmap tl :TagbarToggle<CR>
 
 " 使用~/.vim/syntas/php.vim,关闭分号错误显示
 let php_show_semicolon_error = 0
 
-let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
-
 
 " 自动打开目录栏
 " TODO 自动定位，退出时自动关闭
-autocmd BufWinEnter ToDOList.wiki :Voom<CR>
+" autocmd BufWinEnter ToDOList.wiki :Voom<CR>
 
