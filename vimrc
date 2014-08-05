@@ -10,7 +10,7 @@ let mapleader=','
 set guifont=Monaco:h13 
 
 if has("gui_running")
-    colorscheme blackboard
+    colorscheme jellybeans
 else 
     colorscheme jellybeans
 endif
@@ -19,7 +19,6 @@ set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 language messages zh_CN.utf-8
-source $VIMRUNTIME/delmenu.vim
 set clipboard=unnamed        " 与win共用剪贴板
 
 " 自动缩进4空格
@@ -39,8 +38,6 @@ set incsearch
 " 开启高亮显示结果
 set hlsearch
 
-" 显示行号
-set nu
 set backspace=2              " 设置退格键可用
 " 允许在有未保存修改时切换缓冲区
 set hidden
@@ -75,6 +72,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
+nnoremap L $
+nnoremap H ^
 
 filetype on
 filetype plugin on
@@ -149,20 +148,10 @@ let NERDSpaceDelims = 1
 " PHPDOC
 map <F6> :call PhpDoc()<cr>
 
-"Calender
-map <F8> :Calendar<cr>
-
 let g:python_version_2 = 1
-
-" 添加时间戳
-nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
-
-map <F11> :!node %<CR>
 
 " 添加文件类型 jsfl
 autocmd BufRead,BufNewFile *.jsfl set filetype=javascript 
-
 
 " 使用~/.vim/syntas/php.vim,关闭分号错误显示
 let php_show_semicolon_error = 0
@@ -172,3 +161,6 @@ let php_show_semicolon_error = 0
 " TODO 自动定位，退出时自动关闭
 " autocmd BufWinEnter ToDOList.wiki :Voom<CR>
 
+" timestamp
+let g:timestamp_rep = '%a %d/%m/%Y %r'
+let g:timestamp_automask = "*.wiki"
