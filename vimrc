@@ -8,12 +8,7 @@ call pathogen#helptags()
 set nocompatible
 let mapleader=','
 set guifont=Monaco:h13 
-
-if has("gui_running")
-    colorscheme jellybeans
-else 
-    colorscheme jellybeans
-endif
+colorscheme jellybeans
 
 set fenc=utf-8
 set encoding=utf-8
@@ -72,8 +67,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
-nnoremap L $
-nnoremap H ^
 
 filetype on
 filetype plugin on
@@ -150,17 +143,14 @@ map <F6> :call PhpDoc()<cr>
 
 let g:python_version_2 = 1
 
-" 添加文件类型 jsfl
 autocmd BufRead,BufNewFile *.jsfl set filetype=javascript 
 
 " 使用~/.vim/syntas/php.vim,关闭分号错误显示
 let php_show_semicolon_error = 0
 
-
-" 自动打开目录栏
-" TODO 自动定位，退出时自动关闭
-" autocmd BufWinEnter ToDOList.wiki :Voom<CR>
-
 " timestamp
-let g:timestamp_rep = '%a %d/%m/%Y %r'
+" NOTE: If you find that on subsequent writes of the file, the second line is also unchanged, it is probably because the time returned by strftime is NOT is the format above.
+" https://github.com/vim-scripts/timestamp.vim
+" 修改 timestamp_rep 要注意，修改不当，会使得 modify time 不能更新
+" let g:timestamp_rep = '%a %d/%m/%Y %r'
 let g:timestamp_automask = "*.wiki"
