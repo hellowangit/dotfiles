@@ -1,11 +1,19 @@
+" ================================================
+" Created : Wed 06 Aug 2014 03:23:51 PM CST
+" Modified : Mon 11 Aug 2014 11:35:38 PM CST
+" vim:tw=80:fo+=m
+" ================================================
+
+
 " 常用快捷键 
 " 注释 = ,cc
+" fdm=syntax za toggle fold
 
-" pathogen
 execute pathogen#infect()
 call pathogen#helptags()
 
 set nocompatible
+
 let mapleader=','
 set guifont=Monaco:h13 
 colorscheme jellybeans
@@ -67,6 +75,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
+" 移到行尾和行首是为了插入吧，用A和I就行了
+" nnoremap L $
+" vnoremap L $
+" nnoremap H ^
+" vnoremap H ^
 
 filetype on
 filetype plugin on
@@ -91,11 +104,8 @@ let NERDTreeHijackNetrw=1
 let NERDTreeMouseMode=1
 let NERDTreeQuitOnOpen=0
 
-nnoremap tl :TlistToggle<CR>
-let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-let g:Tlist_Use_Right_Window = 1
-let g:Tlist_Show_One_File = 1
-let g:Tlist_WinWidth = 50
+nnoremap tl :TagbarToggle<CR>
+let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
 
 " VimWiki
 let g:vimwiki_menu = ''
@@ -153,4 +163,3 @@ let php_show_semicolon_error = 0
 " https://github.com/vim-scripts/timestamp.vim
 " 修改 timestamp_rep 要注意，修改不当，会使得 modify time 不能更新
 " let g:timestamp_rep = '%a %d/%m/%Y %r'
-let g:timestamp_automask = "*.wiki"
