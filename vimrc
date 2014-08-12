@@ -1,6 +1,6 @@
 " ================================================
 " Created : Wed 06 Aug 2014 03:23:51 PM CST
-" Modified : Mon 11 Aug 2014 11:35:38 PM CST
+" Modified : Tue 12 Aug 2014 10:49:14 PM CST
 " vim:tw=80:fo+=m
 " ================================================
 
@@ -127,24 +127,6 @@ let g:vimwiki_list = [{
 \ 'auto_export': 1,
 \ 'nested_syntaxes': {'C': 'c', 'C++': 'cpp', 'Haskell': 'haskell', 'Ruby': 'ruby', 'SQL': 'sql', 'HTML': 'html', 'CSS': 'css', 'JavaScript': 'javascript', 'Vim': 'vim', 'Make': 'make'},}]
 
-" fuzzyfinder 
-" let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|sw[po]|obj|pyc|pyo|beam|gz)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-" let g:fuf_modesDisable = ['help']
-" let g:fuf_mrufile_maxItem = 300
-" let g:fuf_mrucmd_maxItem = 400
-" map ,B :FufBuffer<CR>
-" map ,b :FufBufferTag<CR> 
-" map ,F :FufFile<CR>
-" map ,f :FufTaggedFile<CR>
-" map ,d :FufDir<CR>
-" map ,t :FufTag<CR>
-" map ,h :FufMruFile<CR>
-" map ,H :FufMruCmd<CR>
-
-" ACP
-let g:acp_enableAtStartup = 0
-let g:acp_behaviorKeywordLength = 2
-
 " NERD_Commenter
 let NERDSpaceDelims = 1
 
@@ -158,8 +140,3 @@ autocmd BufRead,BufNewFile *.jsfl set filetype=javascript
 " 使用~/.vim/syntas/php.vim,关闭分号错误显示
 let php_show_semicolon_error = 0
 
-" timestamp
-" NOTE: If you find that on subsequent writes of the file, the second line is also unchanged, it is probably because the time returned by strftime is NOT is the format above.
-" https://github.com/vim-scripts/timestamp.vim
-" 修改 timestamp_rep 要注意，修改不当，会使得 modify time 不能更新
-" let g:timestamp_rep = '%a %d/%m/%Y %r'
