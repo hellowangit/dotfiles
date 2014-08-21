@@ -1,6 +1,6 @@
 " ================================================
 " Created : Wed 06 Aug 2014 03:23:51 PM CST
-" Modified : Tue 12 Aug 2014 10:49:14 PM CST
+" Modified : Thu 21 Aug 2014 01:02:10 PM CST
 " vim:tw=80:fo+=m
 " ================================================
 
@@ -134,8 +134,6 @@ let NERDSpaceDelims = 1
 map <F6> :call PhpDoc()<cr>
 
 let g:python_version_2 = 1
-
-autocmd BufRead,BufNewFile *.jsfl set filetype=javascript 
 
 " 使用~/.vim/syntas/php.vim,关闭分号错误显示
 let php_show_semicolon_error = 0
