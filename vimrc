@@ -1,13 +1,14 @@
 " ================================================
 " Created : Wed 06 Aug 2014 03:23:51 PM CST
-" Modified : Thu 21 Aug 2014 01:02:10 PM CST
+" Modified : Thu 21 Aug 2014 03:42:17 PM CST
 " vim:tw=80:fo+=m
 " ================================================
 
 
 " 常用快捷键 
-" 注释 = ,cc
+" 注释 = ,cc ,cb
 " fdm=syntax za toggle fold
+" search ,vv
 
 execute pathogen#infect()
 call pathogen#helptags()
@@ -138,3 +139,8 @@ let g:python_version_2 = 1
 " 使用~/.vim/syntas/php.vim,关闭分号错误显示
 let php_show_semicolon_error = 0
 
+" EasyGrep
+" very easy at search and repalce
+let g:EasyGrepMode = 1
+let g:EasyGrepCommand = 1
+let g:EasyGrepWindow = 1
