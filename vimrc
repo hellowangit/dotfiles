@@ -1,6 +1,6 @@
 " ================================================
 " Created : Wed 06 Aug 2014 03:23:51 PM CST
-" Modified : Thu 11 Sep 2014 12:04:34 AM CST
+" Modified : Sun 28 Sep 2014 09:10:19 PM CST
 " vim:tw=80:fo+=m
 " ================================================
 
@@ -16,14 +16,15 @@ call pathogen#helptags()
 set nocompatible
 
 let mapleader=','
-set guifont=Monaco:h13 
+set guifont=Monaco:h14
+" jellybeans,solarized
 colorscheme jellybeans
 
 set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 language messages zh_CN.utf-8
-set clipboard=unnamed  
+set clipboard=unnamed
 
 " 开启状态栏信息
 set laststatus=2
@@ -44,10 +45,12 @@ set backspace=2 " 设置退格键可用
 set hidden      " 允许在有未保存修改时切换缓冲区
 
 " == 缩进 ==
+" no tab used,all 'tab' use 4 spaces
 set tabstop=4          " 设置Tab键的宽度
 set shiftwidth=4
 set expandtab          " 使用空格代替Tab
 set cindent
+
 
 " == 折叠 ==
 set foldmethod=syntax  " 选择代码折叠类型
@@ -106,16 +109,21 @@ let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_w32_dir_enc = 'utf-8'
 let g:vimwiki_use_mouse = 1
 let g:vimwiki_camel_case = 0
-let g:vimwiki_valid_html_tags='font,b,i,s,u,sub,sup,kbd,br,hr,div,del,code,red,center,left,right,h4,h5,h6,pre'
+let g:vimwiki_valid_html_tags='font,b,i,s,u,sub,sup,kbd,br,hr,div,del,code,red,center,left,right,pre'
 
 let wiki_main = {}
 let wiki_main.path = '~/vimwiki/wiki/'
 let wiki_main.path_html = '~/vimwiki/html/'
 let wiki_main.template_path = '~/vimwiki/template/'
-let wiki_main.template_default = '~/bootstrap'
+let wiki_main.template_default = 'tpl'
 let wiki_main.template_ext = '.html'
 let wiki_main.auto_export = 1
-let wiki_main.nested_syntaxes = {'C': 'c', 'C++': 'cpp', 'Haskell': 'haskell', 'Ruby': 'ruby', 'SQL': 'sql', 'HTML': 'html', 'CSS': 'css', 'JavaScript': 'javascript', 'Vim': 'vim', 'Make': 'make'}
+" vimwiki在vim中代码高亮显示 
+" 'js':'javascript' js是别名,用在 calss='brush: js' , javascript是vim的语法
+" 着色文件 配合SyntaxHighlighter
+" http://alexgorbatchev.com/SyntaxHighlighter/manual/brushes/ 非常完美，既能在
+" vim中代码高亮，也能再html中代码高亮
+let wiki_main.nested_syntaxes = {'sql': 'sql', 'html': 'html', 'css': 'css', 'js': 'javascript', 'vim' : 'vim', 'py':'python'}
 
 let g:vimwiki_list = [wiki_main]
 
