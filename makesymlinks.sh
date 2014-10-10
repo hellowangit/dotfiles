@@ -27,4 +27,4 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/on-my-zsh
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
