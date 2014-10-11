@@ -44,7 +44,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vim-interaction svn autojump)
+plugins=(git vim-interaction svn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,3 +70,11 @@ export SVN_EDITOR=vim
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# autojump os X
+# [[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
+
+# autojump ubuntu
+[[ -s /home/wanglonghai/.autojump/etc/profile.d/autojump.sh  ]] && source /home/wanglonghai/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
