@@ -1,11 +1,16 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export EDITOR='vim'
+
 
 # robbyrussell
 ZSH_THEME="blinks"
 
 #aliases
 alias zshconfig="vim ~/.zshrc"
+
+# vps
+alias vps_1024_1="ssh root@106.186.119.150"
 
 # svn
 alias svn_add_all="svn st |grep '^\?' | awk '{print \$2}' | xargs svn add"
@@ -82,3 +87,20 @@ export SVN_EDITOR=vim
 # [[ -s /home/wanglonghai/.autojump/etc/profile.d/autojump.sh  ]] && source /home/wanglonghai/.autojump/etc/profile.d/autojump.sh
 
 # autoload -U compinit && compinit -u
+
+
+# Base16 Shell
+if [ -z "$THEME" ]; then
+    export THEME="base16-flat"
+fi
+if [ -z "$BACKGROUND" ]; then
+    export BACKGROUND="dark"
+fi
+
+DOTFILES=$HOME/dotfiles
+
+BASE16_SHELL="$DOTFILES/.config/base16-shell/$THEME.$BACKGROUND.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+source $BASE16_SHELL
+
+source $DOTFILES/.config/tmuxinator.zsh
